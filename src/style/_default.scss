@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  min-height: 100vh;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $light-green;
+  background-image: url('img/songbird-bg.jpg');
+  background-size: cover;
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 886px ) {
+    background-image: url('img/songbird-bg-tablet.jpg');
+  }
+
+  @media (max-width: 680px) {
+    // margin-bottom: 0;
+    // padding-bottom: 0;
+    justify-content: space-between;
+    background-position: 50% 50%;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  box-shadow: $shadow;
+}
+
+button:hover {
+  background-color: $yellow;
+  transition: ease-in-out .3s;
+}
+
+button:disabled {
+  cursor: default;
+  background-color: $gray;
+  box-shadow: none;
+}
+
+button:active {
+  background-color: $yellow;
+  box-shadow: none;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.wrapper {
+  visibility: hidden;
+}
+
+.wrapper-active {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  // background-color: rgba(0,0,0, 0.8);
+  background-color: $green-frosted;
+  transition: all 0.6s ease-in-out;
+  visibility: visible;
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 680px) {
+    display: block;
+  }
+}
+
+.desktop {
+  @media (max-width: 680px) {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    width: 648px;
+  }
+
+  @media (max-width: 680px) {
+    width: 328px;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+  overflow-y: hidden;
+  // min-height: calc(100% - $header-height - $footer-height);
+}
+
+.button {
+  padding: 12px 107px;
+  font-size: 20px;
+  line-height: 28px;
+  color: $white;
+  background-color: $orange;
+  border: none;
+  border-radius: $border-radius;
+
+  @media (max-width: 1200px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 680px) {
+    padding: 12px 52px;
+  }
+}
